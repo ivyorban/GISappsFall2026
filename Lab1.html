@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>ArcGIS Maps SDK for JavaScript Tutorials: Display a map</title>
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      img {
+        width: 800px;
+        height: 230px;
+        margin-bottom: 10px;
+      }
+      arcgis-map {
+        width: 800px;
+        height: 400px;
+        margin-bottom: 10px;
+      }
+    </style>
+
+        <!-- Load the ArcGIS Maps SDK for JavaScript from CDN -->
+    <script type="module" src="https://js.arcgis.com/5.1/"></script>
+  </head>
+  <body>
+    <img src="https://dayhikesneardenver.com/wp-content/uploads/2013/08/00-first-flatiron-hike-near-boulder-chautauqua-trail.jpg" alt="Banner" />
+    <p> Click around to explore Boulder hiking trails and parks!</p>
+    <arcgis-map item-id = "58fe737015d24067ac7acb00b45cce3f" center="-105.25, 40.02" zoom="11">
+
+      <arcgis-zoom slot="top-left"></arcgis-zoom>
+
+    </arcgis-map>
+    <p> The above map displays hiking trails and parks in Boulder, CO. Trailheads are marked with a purple icon, horse trails are indicated with an orange dashed line while all other trails are indicated with a brown dashed line. Property maintained by Boulder Parks and Rec is displayed in orange, and grey building footprints can be seen by zooming in.</p>
+    <script type="module">
+        const viewElement = document.querySelector("arcgis-map");
+        const locString = window.location;
+        console.log("locString=" + locString);
+        const urlParams = new URLSearchParams(locString.search);
+        let trailhead = urlParams.get("trailhead");
+        console.log(trailhead);
+            if (trailhead=="centennial") {
+            viewElement.goTo(
+            // go to point with a custom animation duration
+            { center: [-105.2978, 40.0200] },
+            { duration: 5000 },
+            );
+            viewElement.zoom = 15;
+            }
+            if (trailhead=="wonderlandlake") {
+            viewElement.goTo(
+            // go to point with a custom animation duration
+            { center: [ -105.28279, 40.05068] }, 
+            { duration: 5000 },
+            );
+            viewElement.zoom = 15;
+            }
+            
+    </script>
+  </body>
+
+</html>
