@@ -1,0 +1,26 @@
+<HTML>
+    
+  <HEAD>
+    <link rel="stylesheet" href="Lab3style.css">
+    <script type="module" src="https://js.arcgis.com/5.1/"></script>
+  </HEAD>
+  <BODY>
+    <div class="container">
+        <header><span class="lblPreview"><img src="https://wallpaperaccess.com/full/3666658.jpg" style="display: block; margin: 0 auto;" width="700px" height="80px" alt="Skyline"></span></header>
+        <aside class="sidebar-l">
+          <div class="sidebar-l-top">
+            Layer Visibility
+            <arcgis-layer-list reference-element="myMap"></arcgis-layer-list>
+          </div>
+          <div class="sidebar-l-bottom">
+            Legend
+            <arcgis-legend reference-element="myMap"></arcgis-legend>
+          </div>
+        </aside>
+        <main><arcgis-map item-id= "36d2c7c364604f6897af846fdecbb851" id="myMap" center="-104.95,39.75" zoom="14">
+          <arcgis-zoom slot="top-left"></arcgis-zoom>
+        </arcgis-map></main>
+        <footer><span class="lblPreview">Grocery icon from www.flaticon.com licensed by CC 3.0</span></footer>
+    </div>
+  </BODY>
+</HTML>
